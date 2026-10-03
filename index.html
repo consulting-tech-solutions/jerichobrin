@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jericho Brin | Fitness Coach & Lifestyle Transformation</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Jericho Brin | Fitness Coach & Physique Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -13,11 +12,15 @@
                 extend: {
                     colors: {
                         brand: {
-                            orange: '#FF5722',
-                            neon: '#FF3D00',
-                            dark: '#0D0E12',
-                            card: '#16181E',
-                            accent: '#232730'
+                            dark: '#0A192F',        /* Deep Navy Background */
+                            card: '#0F223D',        /* Dark Royal Navy Card Surface */
+                            accent: '#162C46',      /* Mid-tone Navy Accent */
+                            border: '#1E3A8A',      /* Steel Navy Border */
+                            blue: '#38BDF8',        /* Electric Ice Blue Highlight */
+                            brightblue: '#0284C7',  /* Cyan-Navy Primary */
+                            navy: '#030712',        /* Ultra Dark Navy Shadow */
+                            slate: '#64748B',       /* Muted Slate Text */
+                            lightslate: '#94A3B8'  /* Light Slate Text */
                         }
                     },
                     fontFamily: {
@@ -34,176 +37,202 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0D0E12;
-            color: #F3F4F6;
+            background-color: #0A192F;
+            color: #F8FAFC;
             overflow-x: hidden;
         }
         .glow-effect {
-            box-shadow: 0 0 25px rgba(255, 87, 34, 0.35);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
         }
         .glow-text {
-            text-shadow: 0 0 12px rgba(255, 87, 34, 0.6);
+            text-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
         }
         .bg-grid-pattern {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(100, 116, 139, 0.15) 1px, transparent 1px);
             background-size: 24px 24px;
         }
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0D0E12;
+            background: #0A192F;
         }
         ::-webkit-scrollbar-thumb {
-            background: #232730;
+            background: #162C46;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #FF5722;
+            background: #38BDF8;
         }
     </style>
 </head>
-<body class="bg-brand-dark text-gray-100 antialiased selection:bg-brand-orange selection:text-white">
+<body class="bg-brand-dark text-slate-100 antialiased selection:bg-brand-blue selection:text-slate-950">
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-border/30 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
+            <!-- Brand Logo from repository /images/logo.png -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 bg-gradient-to-br from-brand-orange to-red-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
-                    <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 100 100">
-                        <!-- Custom Monogram JB + Dumbbell Shield Logo -->
-                        <path d="M 20 15 L 80 15 L 85 50 L 50 90 L 15 50 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" class="opacity-30"/>
-                        <path d="M 30 25 L 55 25 C 65 25 70 32 70 40 C 70 48 63 52 55 52 L 42 52 L 42 75" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M 32 30 L 32 75 L 20 75" fill="none" stroke="#FFD1C1" stroke-width="7" stroke-linecap="round"/>
-                        <circle cx="50" cy="50" r="6" class="text-white" fill="currentColor"/>
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-xl font-extrabold tracking-wider uppercase text-white group-hover:text-brand-orange transition-colors">Jericho<span class="text-brand-orange">Brin</span></span>
-                    <span class="text-xs font-medium tracking-widest text-gray-400 uppercase">Fitness Coach</span>
+                <div class="relative flex items-center h-12">
+                    <img id="navbar-logo" 
+                         src="images/logo.png" 
+                         alt="Jericho Brin Fitness Logo" 
+                         onerror="this.style.display='none'; document.getElementById('navbar-logo-fallback').style.display='flex';" 
+                         class="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                    
+                    <!-- Fallback if images/logo.png is not found -->
+                    <div id="navbar-logo-fallback" class="hidden items-center gap-3">
+                        <div class="w-11 h-11 bg-gradient-to-br from-brand-blue to-brand-brightblue rounded-xl flex items-center justify-center shadow-md border border-brand-blue/40 font-black text-slate-950 text-xl">
+                            JB
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-lg font-black tracking-wider uppercase text-white group-hover:text-brand-blue transition-colors leading-none">JERICHO<span class="text-brand-blue">BRIN</span></span>
+                            <span class="text-[10px] font-bold tracking-widest text-brand-blue uppercase mt-1 bg-brand-brightblue/20 px-1.5 py-0.5 rounded">FITNESS COACH</span>
+                        </div>
+                    </div>
                 </div>
             </a>
 
-            <!-- Desktop Menu -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-300">
-                <a href="#about" class="hover:text-brand-orange transition-colors">About</a>
-                <a href="#programs" class="hover:text-brand-orange transition-colors">Programs</a>
-                <a href="#calculators" class="hover:text-brand-orange transition-colors">Fitness Tools</a>
-                <a href="#testimonials" class="hover:text-brand-orange transition-colors">Results</a>
-                <a href="#contact" class="hover:text-brand-orange transition-colors">Contact</a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-300">
+                <a href="#about" class="hover:text-brand-blue transition-colors">About</a>
+                <a href="#gallery" class="hover:text-brand-blue transition-colors">Gallery</a>
+                <a href="#workouts" class="hover:text-brand-blue transition-colors">Workouts</a>
+                <a href="#programs" class="hover:text-brand-blue transition-colors">Programs</a>
+                <a href="#calculators" class="hover:text-brand-blue transition-colors">Fitness Tools</a>
+                <a href="#testimonials" class="hover:text-brand-blue transition-colors">Results</a>
+                <a href="#contact" class="hover:text-brand-blue transition-colors">Contact</a>
             </nav>
 
-            <!-- CTA Button -->
-            <div class="hidden md:flex items-center">
-                <a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-brand-orange to-red-600 hover:from-brand-neon hover:to-orange-600 text-white font-bold rounded-xl shadow-lg glow-effect hover:scale-105 transition-all duration-300 text-sm">
-                    Book Consultation <i class="fa-solid font-black fa-arrow-right ml-2 text-xs"></i>
+            <!-- Social Links & CTA Button -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://www.instagram.com/echofitstyle/" target="_blank" rel="noopener noreferrer" title="Jericho Brin Instagram" class="w-10 h-10 rounded-xl bg-brand-card hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 text-slate-300 hover:text-white border border-brand-border/40 flex items-center justify-center hover:scale-105 transition-all">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61580427441809" target="_blank" rel="noopener noreferrer" title="Jericho Brin Facebook" class="w-10 h-10 rounded-xl bg-brand-card hover:bg-brand-blue/20 text-brand-blue border border-brand-border/40 flex items-center justify-center hover:scale-105 transition-all">
+                    <i class="fa-brands fa-facebook-f text-base"></i>
+                </a>
+                <a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-brand-brightblue to-brand-blue hover:from-brand-blue hover:to-sky-300 text-slate-950 font-extrabold rounded-xl shadow-lg glow-effect hover:scale-105 transition-all duration-300 text-sm border border-brand-blue/30">
+                    Book Consultation <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white focus:outline-none p-2">
                 <i class="fa-solid fa-bars text-2xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Dropdown Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-white/10 px-6 py-6 space-y-4">
-            <a href="#about" class="block text-gray-300 hover:text-brand-orange font-medium">About Jericho</a>
-            <a href="#programs" class="block text-gray-300 hover:text-brand-orange font-medium">Training Programs</a>
-            <a href="#calculators" class="block text-gray-300 hover:text-brand-orange font-medium">Fitness Tools</a>
-            <a href="#testimonials" class="block text-gray-300 hover:text-brand-orange font-medium">Testimonials & Results</a>
-            <a href="#contact" class="block text-gray-300 hover:text-brand-orange font-medium">Get In Touch</a>
-            <a href="#contact" class="block w-full text-center px-5 py-3 bg-brand-orange hover:bg-brand-neon text-white font-bold rounded-xl shadow-md">
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-card border-b border-brand-border/40 px-6 py-6 space-y-4">
+            <a href="#about" class="block text-slate-300 hover:text-brand-blue font-medium">About Jericho</a>
+            <a href="#gallery" class="block text-slate-300 hover:text-brand-blue font-medium">Photo Gallery</a>
+            <a href="#workouts" class="block text-slate-300 hover:text-brand-blue font-medium">Workout Videos</a>
+            <a href="#programs" class="block text-slate-300 hover:text-brand-blue font-medium">Training Programs</a>
+            <a href="#calculators" class="block text-slate-300 hover:text-brand-blue font-medium">Fitness Tools</a>
+            <a href="#testimonials" class="block text-slate-300 hover:text-brand-blue font-medium">Testimonials & Results</a>
+            <a href="#contact" class="block text-slate-300 hover:text-brand-blue font-medium">Get In Touch</a>
+            <div class="flex items-center gap-3 pt-2">
+                <a href="https://www.instagram.com/echofitstyle/" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-brand-accent text-pink-400 font-semibold border border-brand-border/40">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61580427441809" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-brand-accent text-brand-blue font-semibold border border-brand-border/40">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+            </div>
+            <a href="#contact" class="block w-full text-center px-5 py-3 bg-gradient-to-r from-brand-brightblue to-brand-blue text-slate-950 font-black rounded-xl shadow-md">
                 Start Transformation
             </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-grid-pattern">
-        <!-- Background Ambient Glow -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-orange/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] bg-brand-blue/15 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Left Hero Text Content -->
+                <!-- Hero Text -->
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-card border border-brand-orange/30 text-brand-orange text-xs sm:text-sm font-semibold tracking-wide">
-                        <span class="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-card/90 border border-brand-blue/30 text-brand-blue text-xs sm:text-sm font-semibold tracking-wide shadow-md">
+                        <span class="w-2 h-2 rounded-full bg-brand-blue animate-ping"></span>
                         Certified Fitness Coach & Physique Specialist
                     </div>
                     
                     <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white leading-tight">
-                        Transform Your Body, <br/>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-orange-400 to-amber-300 glow-text">
-                            Elevate Your Lifestyle.
+                        Transform Your Physique, <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-sky-300 to-slate-200 glow-text">
+                            Master Your Health.
                         </span>
                     </h1>
 
-                    <p class="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        I am dedicated to inspiring and helping people embark on a healthy, sustainable lifestyle. Break your limits with personalized coaching, structured nutrition, and world-class guidance.
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        I am dedicated to inspiring and helping people embark on a healthy lifestyle. Reach your personal peak with tailored training programs, flexible nutrition strategies, and dedicated guidance.
                     </p>
 
                     <!-- Key Metrics Banner -->
-                    <div class="grid grid-cols-3 gap-4 pt-4 pb-2 border-y border-white/10 max-w-xl mx-auto lg:mx-0">
+                    <div class="grid grid-cols-3 gap-4 pt-4 pb-2 border-y border-brand-border/40 max-w-xl mx-auto lg:mx-0">
                         <div class="text-center lg:text-left">
                             <span class="block text-2xl sm:text-3xl font-black text-white">2,000+</span>
-                            <span class="text-xs text-gray-400 font-medium uppercase">Community Members</span>
+                            <span class="text-xs text-brand-lightslate font-medium uppercase">Community Members</span>
                         </div>
                         <div class="text-center lg:text-left">
-                            <span class="block text-2xl sm:text-3xl font-black text-brand-orange">100%</span>
-                            <span class="text-xs text-gray-400 font-medium uppercase">Custom Programs</span>
+                            <span class="block text-2xl sm:text-3xl font-black text-brand-blue">100%</span>
+                            <span class="text-xs text-brand-lightslate font-medium uppercase">Customized Coaching</span>
                         </div>
                         <div class="text-center lg:text-left">
                             <span class="block text-2xl sm:text-3xl font-black text-white">8+ Yrs</span>
-                            <span class="text-xs text-gray-400 font-medium uppercase">Coaching Exp</span>
+                            <span class="text-xs text-brand-lightslate font-medium uppercase">Experience</span>
                         </div>
                     </div>
 
-                    <!-- Hero Call to Actions -->
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-                        <a href="#contact" class="px-8 py-4 bg-gradient-to-r from-brand-orange to-red-600 hover:from-brand-neon hover:to-orange-600 text-white font-extrabold rounded-xl shadow-xl glow-effect hover:scale-105 transition-all duration-300 text-center text-lg">
-                            Start My Transformation
+                    <!-- Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2 items-center">
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-brightblue via-brand-blue to-sky-300 hover:from-brand-blue hover:to-cyan-300 text-slate-950 font-black rounded-xl shadow-xl glow-effect hover:scale-105 transition-all duration-300 text-center text-lg border border-brand-blue/30">
+                            Start Transformation
                         </a>
-                        <a href="#programs" class="px-8 py-4 bg-brand-card hover:bg-brand-accent border border-white/10 text-white font-bold rounded-xl hover:border-brand-orange/50 transition-all duration-300 text-center text-lg">
-                            Explore Programs
-                        </a>
+                        <div class="flex gap-3 w-full sm:w-auto">
+                            <a href="https://www.instagram.com/echofitstyle/" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none px-5 py-4 bg-brand-card hover:bg-brand-accent border border-brand-border/40 text-slate-200 font-bold rounded-xl hover:border-pink-500/50 transition-all duration-300 text-center text-base flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-instagram text-pink-400 text-xl"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61580427441809" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none px-5 py-4 bg-brand-card hover:bg-brand-accent border border-brand-border/40 text-slate-200 font-bold rounded-xl hover:border-brand-blue/50 transition-all duration-300 text-center text-base flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-facebook text-brand-blue text-xl"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right Hero Image Showcase -->
+                <!-- Hero Profile Showcase Card -->
                 <div class="lg:col-span-5 relative flex justify-center">
                     <div class="relative w-full max-w-md">
-                        <!-- Glowing Frame -->
-                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-orange to-red-600 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue via-brand-brightblue to-brand-border rounded-3xl blur-lg opacity-60"></div>
                         
-                        <div class="relative rounded-3xl overflow-hidden bg-brand-card border border-white/10 shadow-2xl">
-                            <!-- SVG Persona Graphic / Photo Placeholder Mockup -->
-                            <div class="relative bg-gradient-to-b from-gray-800 to-brand-card p-6 flex flex-col items-center text-center">
-                                <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-brand-orange/60 shadow-xl mb-4 bg-gray-900">
-                                    <!-- Rendered Physique Icon Graphic representing Jericho -->
-                                    <svg class="w-full h-full text-brand-orange fill-current p-2" viewBox="0 0 24 24">
-                                        <path d="M12 2C10.34 2 9 3.34 9 5C9 6.66 10.34 8 12 8C13.66 8 15 6.66 15 5C15 3.34 13.66 2 12 2ZM20.5 6C19.67 6 19 6.67 19 7.5C19 8.33 19.67 9 20.5 9C21.33 9 22 8.33 22 7.5C22 6.67 21.33 6 20.5 6ZM3.5 6C2.67 6 2 6.67 2 7.5C2 8.33 2.67 9 3.5 9C4.33 9 5 8.33 5 7.5C5 6.67 4.33 6 3.5 6ZM17.2 9.2C16.3 8.5 15.2 8 14 8H10C8.8 8 7.7 8.5 6.8 9.2C5.7 10.1 5 11.5 5 13V22H8V15H9V22H11V16H13V22H15V15H16V22H19V13C19 11.5 18.3 10.1 17.2 9.2Z"/>
-                                    </svg>
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end justify-center pb-3">
-                                        <span class="text-xs font-bold uppercase tracking-wider text-brand-orange bg-black/60 px-3 py-1 rounded-full border border-brand-orange/30"> Jericho Brin </span>
+                        <div class="relative rounded-3xl overflow-hidden bg-brand-card border border-brand-border/50 shadow-2xl">
+                            <div class="relative bg-gradient-to-b from-brand-accent to-brand-card p-6 flex flex-col items-center text-center">
+                                
+                                <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-brand-blue/60 shadow-2xl mb-4 bg-brand-dark flex items-center justify-center">
+                                    <img src="images/profile.jpg" alt="Jericho Brin Profile" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent flex items-end justify-center pb-3">
+                                        <span class="text-xs font-bold uppercase tracking-wider text-brand-blue bg-brand-dark/90 px-3 py-1 rounded-full border border-brand-blue/40 shadow">
+                                            Jericho Brin
+                                        </span>
                                     </div>
                                 </div>
                                 
-                                <h3 class="text-xl font-bold text-white">Jericho Brin</h3>
-                                <p class="text-sm text-brand-orange font-semibold mb-3">Head Fitness Coach</p>
-                                <p class="text-xs text-gray-400 italic">"Inspiring & empowering individuals to build athletic strength, lean muscle, and long-term health."</p>
+                                <h3 class="text-2xl font-black text-white">Jericho Brin</h3>
+                                <p class="text-sm text-brand-blue font-semibold mb-1">Head Fitness Coach</p>
+                                <p class="text-xs text-pink-400 font-medium mb-3"><i class="fa-brands fa-instagram mr-1"></i>@echofitstyle</p>
+                                <p class="text-xs text-slate-300 italic px-2">"Inspiring and helping people to embark on a healthy, active lifestyle with long-term results."</p>
                                 
-                                <!-- Social Badge -->
-                                <div class="mt-4 flex items-center justify-center gap-3">
-                                    <a href="https://www.facebook.com/jericho.brin.924622" target="_blank" class="w-10 h-10 rounded-full bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
-                                        <i class="fa-brands fa-facebook-f text-sm"></i>
+                                <div class="grid grid-cols-2 gap-3 w-full mt-5">
+                                    <a href="https://www.instagram.com/echofitstyle/" target="_blank" rel="noopener noreferrer" class="py-2.5 rounded-xl bg-gradient-to-r from-purple-900/60 via-pink-900/60 to-rose-900/60 hover:from-purple-800 hover:to-rose-800 text-white font-semibold text-xs tracking-wider uppercase border border-pink-500/30 flex items-center justify-center gap-2 transition-all shadow-md">
+                                        <i class="fa-brands fa-instagram text-sm text-pink-400"></i>
+                                        <span>Instagram</span>
                                     </a>
-                                    <a href="#contact" class="w-10 h-10 rounded-full bg-brand-orange/20 text-brand-orange border border-brand-orange/30 flex items-center justify-center hover:bg-brand-orange hover:text-white transition-colors">
-                                        <i class="fa-solid fa-envelope text-sm"></i>
+                                    <a href="https://www.facebook.com/profile.php?id=61580427441809" target="_blank" rel="noopener noreferrer" class="py-2.5 rounded-xl bg-gradient-to-r from-brand-brightblue to-brand-card hover:from-brand-blue hover:to-brand-brightblue text-slate-950 font-black text-xs tracking-wider uppercase border border-brand-blue/30 flex items-center justify-center gap-2 transition-all shadow-md">
+                                        <i class="fa-brands fa-facebook-f text-sm text-slate-950"></i>
+                                        <span>Facebook</span>
                                     </a>
                                 </div>
                             </div>
@@ -215,84 +244,83 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-brand-card/50 border-y border-white/5 relative">
+    <section id="about" class="py-20 bg-brand-card/40 border-y border-brand-border/30 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Left Visual Elements/Gallery Grid -->
                 <div class="lg:col-span-5 grid grid-cols-2 gap-4">
                     <div class="space-y-4">
-                        <div class="bg-brand-card p-4 rounded-2xl border border-white/10 shadow-lg text-center">
-                            <div class="w-12 h-12 mx-auto bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange text-2xl mb-2">
+                        <div class="bg-brand-card p-5 rounded-2xl border border-brand-border/40 shadow-lg text-center">
+                            <div class="w-12 h-12 mx-auto bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue text-2xl mb-2 border border-brand-blue/20">
                                 <i class="fa-solid fa-dumbbell"></i>
                             </div>
-                            <h4 class="font-bold text-white text-sm">Strength Training</h4>
-                            <p class="text-xs text-gray-400 mt-1">Hypertrophy & Form Optimization</p>
+                            <h4 class="font-bold text-white text-sm">Strength Coaching</h4>
+                            <p class="text-xs text-slate-400 mt-1">Muscle Building & Conditioning</p>
                         </div>
-                        <div class="bg-brand-card p-4 rounded-2xl border border-white/10 shadow-lg text-center">
-                            <div class="w-12 h-12 mx-auto bg-green-500/10 rounded-xl flex items-center justify-center text-green-400 text-2xl mb-2">
+                        <div class="bg-brand-card p-5 rounded-2xl border border-brand-border/40 shadow-lg text-center">
+                            <div class="w-12 h-12 mx-auto bg-sky-500/10 rounded-xl flex items-center justify-center text-sky-400 text-2xl mb-2 border border-sky-500/20">
                                 <i class="fa-solid fa-apple-whole"></i>
                             </div>
-                            <h4 class="font-bold text-white text-sm">Nutrition Coaching</h4>
-                            <p class="text-xs text-gray-400 mt-1">Flexible Macro Guidance</p>
+                            <h4 class="font-bold text-white text-sm">Nutrition Plans</h4>
+                            <p class="text-xs text-slate-400 mt-1">Sustainable Macro Formulas</p>
                         </div>
                     </div>
                     <div class="space-y-4 pt-6">
-                        <div class="bg-brand-card p-4 rounded-2xl border border-white/10 shadow-lg text-center">
-                            <div class="w-12 h-12 mx-auto bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 text-2xl mb-2">
+                        <div class="bg-brand-card p-5 rounded-2xl border border-brand-border/40 shadow-lg text-center">
+                            <div class="w-12 h-12 mx-auto bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-400 text-2xl mb-2 border border-indigo-500/20">
                                 <i class="fa-solid fa-heart-pulse"></i>
                             </div>
                             <h4 class="font-bold text-white text-sm">Cardio & Stamina</h4>
-                            <p class="text-xs text-gray-400 mt-1">Endurance & Fat Loss</p>
+                            <p class="text-xs text-slate-400 mt-1">Endurance & Fat Loss</p>
                         </div>
-                        <div class="bg-brand-card p-4 rounded-2xl border border-white/10 shadow-lg text-center">
-                            <div class="w-12 h-12 mx-auto bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-400 text-2xl mb-2">
+                        <div class="bg-brand-card p-5 rounded-2xl border border-brand-border/40 shadow-lg text-center">
+                            <div class="w-12 h-12 mx-auto bg-teal-500/10 rounded-xl flex items-center justify-center text-teal-300 text-2xl mb-2 border border-teal-500/20">
                                 <i class="fa-solid fa-user-check"></i>
                             </div>
                             <h4 class="font-bold text-white text-sm">1-on-1 Mentorship</h4>
-                            <p class="text-xs text-gray-400 mt-1">Accountability & Support</p>
+                            <p class="text-xs text-slate-400 mt-1">Daily Accountability</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Text Content -->
                 <div class="lg:col-span-7 space-y-6">
-                    <span class="text-brand-orange font-bold text-sm tracking-wider uppercase">Meet Your Coach</span>
+                    <span class="text-brand-blue font-bold text-sm tracking-wider uppercase">Meet Your Coach</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
-                        Hi, I'm <span class="text-brand-orange">Jericho Brin</span>.
+                        Hi, I'm <span class="text-brand-blue">Jericho Brin</span>.
                     </h2>
-                    <p class="text-gray-300 leading-relaxed">
-                        My primary mission is to inspire, educate, and empower individuals to embrace a healthy and active lifestyle. Whether you are taking your very first step in the gym or aiming to build an elite physique, I craft sustainable fitness solutions tailored specifically to your body type and goals.
+                    <p class="text-slate-300 leading-relaxed">
+                        I am a fitness coach and I want to inspire and help people to embark on a healthy lifestyle. Fitness is more than a short-term routine—it is a lifelong habit that elevates your confidence, strength, and daily energy.
                     </p>
-                    <p class="text-gray-400 leading-relaxed text-sm">
-                        Fitness isn't just about quick fixes or extreme diets; it's about forming lasting habits that enhance your overall energy, mental clarity, and athletic performance. Through science-based training methodologies and flexible nutrition plans, we work together to turn your aspirations into tangible results.
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Whether your objective is dropping body fat, building athletic muscle, or developing proper lifting form, I provide customized workout routines and clear nutrition blueprints tailored to your specific body and lifestyle.
                     </p>
 
-                    <!-- Feature Checklist -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-200 pt-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-200 pt-2">
                         <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-brand-orange text-base"></i>
-                            <span>Personalized Muscle & Strength Programs</span>
+                            <i class="fa-solid fa-circle-check text-brand-blue text-base"></i>
+                            <span>Personalized Muscle & Hypertrophy Plans</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-brand-orange text-base"></i>
-                            <span>Custom Meal Plans & Calorie Tracking</span>
+                            <i class="fa-solid fa-circle-check text-brand-blue text-base"></i>
+                            <span>Customized Meal & Calorie Targets</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-brand-orange text-base"></i>
-                            <span>Weekly Check-ins & Progress Analysis</span>
+                            <i class="fa-solid fa-circle-check text-brand-blue text-base"></i>
+                            <span>Weekly Progress & Assessment Checks</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-brand-orange text-base"></i>
-                            <span>Form Correction & Injury Prevention</span>
+                            <i class="fa-solid fa-circle-check text-brand-blue text-base"></i>
+                            <span>Lifting Mechanics & Form Feedback</span>
                         </div>
                     </div>
 
-                    <div class="pt-4">
-                        <a href="#contact" class="inline-flex items-center gap-2 text-brand-orange font-bold hover:text-white transition-colors">
-                            <span>Ready to talk about your goals?</span>
+                    <div class="pt-4 flex flex-wrap gap-4 items-center">
+                        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-blue hover:bg-sky-300 text-slate-950 font-black rounded-xl transition-all shadow-md">
+                            <span>Get Started Now</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="https://www.instagram.com/echofitstyle/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 transition-colors font-medium text-sm">
+                            <i class="fa-brands fa-instagram"></i> Follow @echofitstyle
                         </a>
                     </div>
                 </div>
@@ -301,307 +329,371 @@
         </div>
     </section>
 
-    <!-- Training Programs Section -->
+    <section id="gallery" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-blue font-bold text-sm tracking-wider uppercase">Behind The Scenes</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Instructor Gallery & Spotlight</h2>
+                <p class="text-slate-400 mt-4">Photos load directly from repository path <code class="text-brand-blue bg-brand-card px-2 py-0.5 rounded border border-brand-border/40">images/</code> folder on GitHub.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="group relative bg-brand-card rounded-2xl overflow-hidden border border-brand-border/40 shadow-xl cursor-pointer hover:border-brand-blue/60 transition-all duration-300" onclick="openPhotoModal('images/physique.jpg', 'Physique & Body Conditioning', 'Coach Jericho Brin focusing on physique symmetry, muscle mass, and body conditioning.')">
+                    <div class="aspect-[4/3] bg-brand-navy relative overflow-hidden">
+                        <img src="images/physique.jpg" alt="Jericho Brin Physique" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <span class="absolute top-3 right-3 bg-brand-blue text-slate-950 font-bold text-xs px-3 py-1 rounded-full shadow">Physique</span>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h4 class="text-lg font-extrabold text-white group-hover:text-brand-blue transition-colors">Physique & Conditioning</h4>
+                            <p class="text-xs text-slate-300 mt-1">images/physique.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative bg-brand-card rounded-2xl overflow-hidden border border-brand-border/40 shadow-xl cursor-pointer hover:border-brand-blue/60 transition-all duration-300" onclick="openPhotoModal('images/lifestyle.jpg', 'Lifestyle & Active Living', 'Jericho Brin promoting active lifestyle habits, family balance, and travel.')">
+                    <div class="aspect-[4/3] bg-brand-navy relative overflow-hidden">
+                        <img src="images/lifestyle.jpg" alt="Jericho Brin Lifestyle" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <span class="absolute top-3 right-3 bg-indigo-500 text-white font-bold text-xs px-3 py-1 rounded-full shadow">Lifestyle</span>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h4 class="text-lg font-extrabold text-white group-hover:text-brand-blue transition-colors">Lifestyle & Active Living</h4>
+                            <p class="text-xs text-slate-300 mt-1">images/lifestyle.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative bg-brand-card rounded-2xl overflow-hidden border border-brand-border/40 shadow-xl cursor-pointer hover:border-brand-blue/60 transition-all duration-300" onclick="openPhotoModal('images/coaching.jpg', 'In-Gym Strength Coaching', 'Direct 1-on-1 coaching sessions focusing on progressive overload and squat/bench technique.')">
+                    <div class="aspect-[4/3] bg-brand-navy relative overflow-hidden">
+                        <img src="images/coaching.jpg" alt="Jericho Brin Personal Training" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <span class="absolute top-3 right-3 bg-teal-400 text-slate-950 font-bold text-xs px-3 py-1 rounded-full shadow">Coaching</span>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h4 class="text-lg font-extrabold text-white group-hover:text-brand-blue transition-colors">In-Gym Strength Coaching</h4>
+                            <p class="text-xs text-slate-300 mt-1">images/coaching.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="workouts" class="py-20 bg-brand-card/30 border-y border-brand-border/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-blue font-bold text-sm tracking-wider uppercase">Free Workout Content</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Workout Video Showcase</h2>
+                <p class="text-slate-400 mt-4">Watch Coach Jericho Brin demonstrate exercise technique, hypertrophy principles, and core stability drills.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-border/40 shadow-xl group hover:border-brand-blue/50 transition-all duration-300">
+                    <div class="relative aspect-video bg-brand-navy cursor-pointer" onclick="openVideoModal('Chest & Upper Body Hypertrophy', 'Learn Coach Jericho\'s essential press variations and cable fly movement mechanics for maximum chest activation.')">
+                        <img src="images/workout1.jpg" alt="Chest Workout" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-75">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-brand-blue text-slate-950 flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform glow-effect font-black">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-3 right-3 bg-brand-dark/90 text-white text-xs font-bold px-2.5 py-1 rounded border border-brand-border/40">12:45</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded bg-brand-blue/20 text-brand-blue border border-brand-blue/30">Chest & Arms</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">Intermediate</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-blue transition-colors mb-2">Chest & Upper Body Blast</h3>
+                        <p class="text-xs text-slate-400 line-clamp-2">Master dumbbell incline presses, cable flyes, and lockout stability with Coach Jericho.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-border/40 shadow-xl group hover:border-brand-blue/50 transition-all duration-300">
+                    <div class="relative aspect-video bg-brand-navy cursor-pointer" onclick="openVideoModal('Core Stability & Ab Conditioning Routine', 'A concentrated 10-minute high-intensity core workout designed to build ab definition and lumbar stability.')">
+                        <img src="images/workout2.jpg" alt="Core Workout" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-75">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-brand-blue text-slate-950 flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform glow-effect font-black">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-3 right-3 bg-brand-dark/90 text-white text-xs font-bold px-2.5 py-1 rounded border border-brand-border/40">08:30</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30">Core & Abs</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">All Levels</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-blue transition-colors mb-2">Core & Abdominal Circuit</h3>
+                        <p class="text-xs text-slate-400 line-clamp-2">Hanging leg raises, plank variations, and rotative core exercises for functional strength.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-border/40 shadow-xl group hover:border-brand-blue/50 transition-all duration-300">
+                    <div class="relative aspect-video bg-brand-navy cursor-pointer" onclick="openVideoModal('Dynamic Mobility & Warmup Flow', 'Essential dynamic mobility routine before heavy leg day or deadlift sessions to open hips and prevent injury.')">
+                        <img src="images/workout3.jpg" alt="Mobility Workout" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-75">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-brand-blue text-slate-950 flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform glow-effect font-black">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-3 right-3 bg-brand-dark/90 text-white text-xs font-bold px-2.5 py-1 rounded border border-brand-border/40">15:10</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">Mobility</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">Beginner</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-blue transition-colors mb-2">Dynamic Joint Warmup</h3>
+                        <p class="text-xs text-slate-400 line-clamp-2">Mobilize your ankles, hips, and thoracic spine before lifting heavy weights safely.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section id="programs" class="py-20 bg-brand-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-orange font-bold text-sm tracking-wider uppercase">Tailored Solutions</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Training & Coaching Programs</h2>
-                <p class="text-gray-400 mt-4">Select the training path that aligns with your lifestyle, experience level, and physical fitness goals.</p>
+                <span class="text-brand-blue font-bold text-sm tracking-wider uppercase">Coaching Programs</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Tailored Fitness Solutions</h2>
+                <p class="text-slate-400 mt-4">Choose the program that aligns with your goals, experience level, and schedule.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Program Card 1 -->
-                <div class="bg-brand-card rounded-2xl p-8 border border-white/10 hover:border-brand-orange/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2">
+                
+                <div class="bg-brand-card rounded-2xl p-8 border border-brand-border/40 shadow-xl flex flex-col justify-between hover:border-brand-blue/60 transition-all duration-300 relative group">
                     <div>
-                        <div class="w-14 h-14 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-6 group-hover:bg-brand-orange group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-user-gear"></i>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-blue/10 border border-brand-blue/30 text-brand-blue flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-person-walking-luggage"></i>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-white mb-2">1-on-1 Personal Training</h3>
-                        <p class="text-brand-orange text-xs font-bold uppercase tracking-wider mb-4">In-Person & Hands-On</p>
-                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                            Direct, in-person coaching sessions focusing on proper lifting execution, progressive overload, posture alignment, and maximum gym motivation.
-                        </p>
-                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-orange"></i> Live technique feedback
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-orange"></i> Customized workout splits
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-orange"></i> Accountability & motivation
-                            </li>
+                        <h3 class="text-2xl font-bold text-white mb-2">1-on-1 Personal Training</h3>
+                        <p class="text-slate-400 text-xs mb-6">Direct in-person training with Coach Jericho for form mastery and maximum intensity.</p>
+                        
+                        <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Customized Gym Workout Split</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Real-time Lifting Technique Coaching</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Personalized Macro & Calorie Targets</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Bi-weekly Physique Assessments</li>
                         </ul>
                     </div>
-                    <a href="#contact" onclick="selectProgram('1-on-1 Personal Training')" class="w-full py-3 bg-brand-accent hover:bg-brand-orange text-white text-center font-bold rounded-xl transition-colors border border-white/10">
-                        Enquire Now
+
+                    <a href="#contact" onclick="selectProgram('1-on-1 Personal Training')" class="w-full py-3 bg-brand-accent hover:bg-brand-blue hover:text-slate-950 text-white font-bold rounded-xl text-center text-sm transition-all border border-brand-border/40">
+                        Select Program
                     </a>
                 </div>
 
-                <!-- Program Card 2 (Featured) -->
-                <div class="bg-gradient-to-b from-brand-card to-brand-accent rounded-2xl p-8 border-2 border-brand-orange shadow-xl relative flex flex-col justify-between hover:-translate-y-2 transition-all duration-300">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-orange text-white text-xs font-extrabold uppercase px-4 py-1 rounded-full shadow">
+                <div class="bg-gradient-to-b from-brand-accent to-brand-card rounded-2xl p-8 border-2 border-brand-blue shadow-2xl flex flex-col justify-between relative group scale-105 z-10">
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-brightblue to-brand-blue text-slate-950 text-[10px] font-black uppercase px-4 py-1 rounded-full tracking-wider border border-brand-blue/40 shadow">
                         Most Popular
-                    </div>
+                    </span>
                     <div>
-                        <div class="w-14 h-14 bg-brand-orange rounded-2xl flex items-center justify-center text-white text-2xl mb-6 shadow-md">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-blue text-slate-950 flex items-center justify-center text-2xl mb-6 shadow-lg glow-effect group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-laptop-code"></i>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-white mb-2">Online Fitness Coaching</h3>
-                        <p class="text-brand-orange text-xs font-bold uppercase tracking-wider mb-4">Train From Anywhere</p>
-                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                            Complete digital fitness coaching delivered straight to your phone. Includes customized workouts, video form reviews, and regular check-ins.
-                        </p>
-                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-orange"></i> Video movement analysis
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-orange"></i> Weekly progress updates
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-orange"></i> Direct coach messaging access
-                            </li>
+                        <h3 class="text-2xl font-bold text-white mb-2">Online Fitness Coaching</h3>
+                        <p class="text-slate-300 text-xs mb-6">Full remote coaching wherever you are in the world with total structure and continuous support.</p>
+                        
+                        <ul class="space-y-3 text-xs text-slate-200 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> App-based Customized Training Plans</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Video Form Analysis & Corrections</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Weekly Progress Review & Adjustments</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Direct WhatsApp / Messenger Access</li>
                         </ul>
                     </div>
-                    <a href="#contact" onclick="selectProgram('Online Fitness Coaching')" class="w-full py-3 bg-brand-orange hover:bg-brand-neon text-white text-center font-bold rounded-xl shadow-md transition-colors">
-                        Get Started
+
+                    <a href="#contact" onclick="selectProgram('Online Fitness Coaching')" class="w-full py-3.5 bg-gradient-to-r from-brand-brightblue to-brand-blue hover:from-brand-blue hover:to-sky-300 text-slate-950 font-black rounded-xl text-center text-sm transition-all shadow-lg glow-effect">
+                        Start Remote Coaching
                     </a>
                 </div>
 
-                <!-- Program Card 3 -->
-                <div class="bg-brand-card rounded-2xl p-8 border border-white/10 hover:border-brand-orange/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2">
+                <div class="bg-brand-card rounded-2xl p-8 border border-brand-border/40 shadow-xl flex flex-col justify-between hover:border-brand-blue/60 transition-all duration-300 relative group">
                     <div>
-                        <div class="w-14 h-14 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-6 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-blue/10 border border-brand-blue/30 text-brand-blue flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-utensils"></i>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-white mb-2">Lifestyle & Nutrition</h3>
-                        <p class="text-brand-orange text-xs font-bold uppercase tracking-wider mb-4">Body Recomposition</p>
-                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                            Master your nutrition without sacrificing the foods you love. Tailored macronutrient targets, meal planning strategies, and healthy habit building.
-                        </p>
-                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-orange"></i> Macro & calorie prescription
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-orange"></i> Healthy lifestyle habits guide
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-brand-orange"></i> Supplement recommendations
-                            </li>
+                        <h3 class="text-2xl font-bold text-white mb-2">Nutrition & Lifestyle Plan</h3>
+                        <p class="text-slate-400 text-xs mb-6">Targeted nutritional guidance designed for fat loss, energy optimization, and body recomposition.</p>
+                        
+                        <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Custom TDEE & Macro Calculation</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Flexible Dieting & Grocery Guides</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Healthy Habit Blueprint</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Supplementation Recommendations</li>
                         </ul>
                     </div>
-                    <a href="#contact" onclick="selectProgram('Lifestyle & Nutrition')" class="w-full py-3 bg-brand-accent hover:bg-brand-orange text-white text-center font-bold rounded-xl transition-colors border border-white/10">
-                        Enquire Now
+
+                    <a href="#contact" onclick="selectProgram('Nutrition & Lifestyle Plan')" class="w-full py-3 bg-brand-accent hover:bg-brand-blue hover:text-slate-950 text-white font-bold rounded-xl text-center text-sm transition-all border border-brand-border/40">
+                        Select Program
                     </a>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Interactive Fitness Calculators Section -->
-    <section id="calculators" class="py-20 bg-brand-card/40 border-y border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-orange font-bold text-sm tracking-wider uppercase">Interactive Tools</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Fitness & Macro Calculators</h2>
-                <p class="text-gray-400 mt-4">Estimate your Body Mass Index (BMI) and daily caloric/macronutrient requirements instantly.</p>
+    <section id="calculators" class="py-20 bg-brand-card/40 border-y border-brand-border/30">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-blue font-bold text-sm tracking-wider uppercase">Interactive Tools</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Fitness & Macro Calculators</h2>
+                <p class="text-slate-400 mt-2 text-sm">Assess your current body metrics and estimate your target calorie needs.</p>
             </div>
 
-            <!-- Tab Switcher -->
-            <div class="flex justify-center mb-10">
-                <div class="inline-flex p-1 bg-brand-card rounded-xl border border-white/10">
-                    <button id="tab-bmi-btn" onclick="switchTab('bmi')" class="px-6 py-2.5 rounded-lg font-bold text-sm bg-brand-orange text-white shadow transition-all">
+            <div class="flex justify-center mb-8">
+                <div class="bg-brand-dark p-1.5 rounded-xl border border-brand-border/40 inline-flex gap-2">
+                    <button id="tab-bmi-btn" onclick="switchTab('bmi')" class="px-6 py-2.5 rounded-lg font-bold text-sm bg-brand-blue text-slate-950 shadow transition-all">
                         BMI Calculator
                     </button>
-                    <button id="tab-macro-btn" onclick="switchTab('macro')" class="px-6 py-2.5 rounded-lg font-bold text-sm text-gray-400 hover:text-white transition-all">
-                        Calorie & Macro Calculator
+                    <button id="tab-macro-btn" onclick="switchTab('macro')" class="px-6 py-2.5 rounded-lg font-bold text-sm text-slate-400 hover:text-white transition-all">
+                        Calorie & Macro Estimator
                     </button>
                 </div>
             </div>
 
-            <!-- CALCULATOR 1: BMI CALCULATOR -->
-            <div id="bmi-calculator" class="max-w-2xl mx-auto bg-brand-card rounded-2xl p-6 sm:p-8 border border-white/10 shadow-2xl">
-                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                    <i class="fa-solid fa-weight-scale text-brand-orange"></i> Body Mass Index (BMI) Calculator
-                </h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div id="bmi-calculator" class="bg-brand-card p-8 rounded-2xl border border-brand-border/40 shadow-2xl max-w-xl mx-auto">
+                <h3 class="text-xl font-bold text-white mb-4 text-center">Body Mass Index (BMI)</h3>
+                <div class="space-y-4">
                     <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Weight (kg)</label>
-                        <input type="number" id="bmi-weight" placeholder="e.g. 70" value="70" class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange transition-colors">
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Weight (kg)</label>
+                        <input type="number" id="bmi-weight" placeholder="e.g. 70" class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Height (cm)</label>
-                        <input type="number" id="bmi-height" placeholder="e.g. 175" value="175" class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange transition-colors">
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Height (cm)</label>
+                        <input type="number" id="bmi-height" placeholder="e.g. 175" class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none">
                     </div>
-                </div>
-
-                <button onclick="calculateBMI()" class="w-full mt-6 py-3.5 bg-brand-orange hover:bg-brand-neon text-white font-bold rounded-xl shadow-lg transition-all">
-                    Calculate BMI
-                </button>
-
-                <!-- BMI Result Output -->
-                <div id="bmi-result" class="mt-6 p-4 rounded-xl bg-brand-dark border border-white/10 hidden text-center">
-                    <p class="text-xs uppercase text-gray-400 font-bold">Your Computed BMI</p>
-                    <span id="bmi-value" class="block text-3xl font-black text-brand-orange my-1">--</span>
-                    <span id="bmi-category" class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase text-white bg-gray-700">--</span>
+                    <button onclick="calculateBMI()" class="w-full py-3.5 bg-gradient-to-r from-brand-brightblue to-brand-blue hover:from-brand-blue hover:to-sky-300 text-slate-950 font-black rounded-xl transition-all shadow-md">
+                        Calculate BMI
+                    </button>
+                    
+                    <div id="bmi-result" class="hidden mt-6 p-4 rounded-xl bg-brand-dark border border-brand-blue/30 text-center">
+                        <span class="text-xs text-slate-400 font-medium">Your Estimated BMI</span>
+                        <div id="bmi-value" class="text-3xl font-black text-brand-blue my-1">--</div>
+                        <div id="bmi-category" class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase text-white bg-brand-slate">--</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- CALCULATOR 2: MACRO & CALORIE CALCULATOR -->
-            <div id="macro-calculator" class="max-w-3xl mx-auto bg-brand-card rounded-2xl p-6 sm:p-8 border border-white/10 shadow-2xl hidden">
-                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                    <i class="fa-solid fa-calculator text-brand-orange"></i> Daily Calorie & Macro Estimator
-                </h3>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            <div id="macro-calculator" class="hidden bg-brand-card p-8 rounded-2xl border border-brand-border/40 shadow-2xl max-w-xl mx-auto">
+                <h3 class="text-xl font-bold text-white mb-4 text-center">Calorie & Macro Target Estimator</h3>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Gender</label>
+                            <select id="macro-gender" class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Age</label>
+                            <input type="number" id="macro-age" placeholder="28" class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Weight (kg)</label>
+                            <input type="number" id="macro-weight" placeholder="72" class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Height (cm)</label>
+                            <input type="number" id="macro-height" placeholder="175" class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none">
+                        </div>
+                    </div>
+
                     <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Gender</label>
-                        <select id="macro-gender" class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Primary Fitness Goal</label>
+                        <select id="macro-goal" class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none">
+                            <option value="lose">Fat Loss / Fat Reduction</option>
+                            <option value="maintain">Body Recomposition / Maintenance</option>
+                            <option value="gain">Lean Muscle Mass Gain</option>
                         </select>
                     </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Age</label>
-                        <input type="number" id="macro-age" value="28" class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Weight (kg)</label>
-                        <input type="number" id="macro-weight" value="70" class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange">
-                    </div>
-                </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Height (cm)</label>
-                        <input type="number" id="macro-height" value="175" class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Primary Goal</label>
-                        <select id="macro-goal" class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange">
-                            <option value="maintain">Maintain Weight</option>
-                            <option value="lose">Fat Loss (Deficit)</option>
-                            <option value="gain">Muscle Gain (Surplus)</option>
-                        </select>
-                    </div>
-                </div>
+                    <button onclick="calculateMacros()" class="w-full py-3.5 bg-gradient-to-r from-brand-brightblue to-brand-blue hover:from-brand-blue hover:to-sky-300 text-slate-950 font-black rounded-xl transition-all shadow-md">
+                        Calculate Daily Targets
+                    </button>
 
-                <button onclick="calculateMacros()" class="w-full py-3.5 bg-brand-orange hover:bg-brand-neon text-white font-bold rounded-xl shadow-lg transition-all">
-                    Calculate Daily Target
-                </button>
-
-                <!-- Macro Result Output -->
-                <div id="macro-result" class="mt-6 p-6 rounded-xl bg-brand-dark border border-white/10 hidden">
-                    <div class="text-center mb-4">
-                        <span class="text-xs uppercase text-gray-400 font-bold">Estimated Daily Calories</span>
-                        <span id="macro-calories" class="block text-4xl font-black text-brand-orange">-- kcal</span>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-4 text-center">
-                        <div class="bg-brand-card p-3 rounded-xl border border-white/5">
-                            <span class="block text-xs text-gray-400 font-bold uppercase">Protein</span>
-                            <span id="macro-protein" class="text-lg font-bold text-white">-- g</span>
+                    <div id="macro-result" class="hidden mt-6 p-5 rounded-xl bg-brand-dark border border-brand-blue/30 space-y-3">
+                        <div class="text-center">
+                            <span class="text-xs text-slate-400 font-medium">Estimated Daily Energy Target</span>
+                            <div id="macro-calories" class="text-3xl font-black text-brand-blue">--</div>
                         </div>
-                        <div class="bg-brand-card p-3 rounded-xl border border-white/5">
-                            <span class="block text-xs text-gray-400 font-bold uppercase">Carbs</span>
-                            <span id="macro-carbs" class="text-lg font-bold text-white">-- g</span>
-                        </div>
-                        <div class="bg-brand-card p-3 rounded-xl border border-white/5">
-                            <span class="block text-xs text-gray-400 font-bold uppercase">Fats</span>
-                            <span id="macro-fats" class="text-lg font-bold text-white">-- g</span>
+                        <div class="grid grid-cols-3 gap-2 text-center pt-2 border-t border-brand-border/40 text-xs">
+                            <div>
+                                <span class="block text-slate-400">Protein</span>
+                                <span id="macro-protein" class="font-bold text-white text-sm">--</span>
+                            </div>
+                            <div>
+                                <span class="block text-slate-400">Carbs</span>
+                                <span id="macro-carbs" class="font-bold text-white text-sm">--</span>
+                            </div>
+                            <div>
+                                <span class="block text-slate-400">Fats</span>
+                                <span id="macro-fats" class="font-bold text-white text-sm">--</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
 
-    <!-- Testimonials / Client Results -->
     <section id="testimonials" class="py-20 bg-brand-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-orange font-bold text-sm tracking-wider uppercase">Proven Transformations</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Client Success Stories</h2>
-                <p class="text-gray-400 mt-4">Real results from dedicated individuals who committed to Jericho's coaching guidance.</p>
+                <span class="text-brand-blue font-bold text-sm tracking-wider uppercase">Client Success Stories</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Real Transformations</h2>
+                <p class="text-slate-400 mt-4">Hear from individuals who transformed their bodies and habits under Jericho Brin's guidance.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-brand-card p-6 rounded-2xl border border-white/10 relative flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-gray-300 text-sm italic mb-6">
-                            "Coaching with Jericho turned my health around completely. He helped me lose 12kg while building strength and staying energised throughout the workday."
-                        </p>
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border/40 shadow-xl relative">
+                    <div class="flex items-center gap-1 text-brand-blue text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-orange to-red-500 flex items-center justify-center font-bold text-white text-sm">
-                            M.R.
+                    <p class="text-slate-300 text-xs leading-relaxed italic mb-6">"Coach Jericho helped me break through my plateau. His form corrections on my bench and deadlift prevented injury while helping me add noticeable muscle mass."</p>
+                    <div class="flex items-center gap-3 border-t border-brand-border/30 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-accent text-brand-blue font-bold flex items-center justify-center border border-brand-blue/30 text-sm">
+                            RD
                         </div>
                         <div>
-                            <h4 class="font-bold text-white text-sm">Mark R.</h4>
-                            <p class="text-xs text-gray-400">Online Coaching • Lost 12kg</p>
+                            <h4 class="font-bold text-white text-sm">Ramon D.</h4>
+                            <p class="text-[10px] text-slate-400">Online Coaching Client</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
-                <div class="bg-brand-card p-6 rounded-2xl border border-white/10 relative flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-gray-300 text-sm italic mb-6">
-                            "Coach Jericho focuses on real form and consistency. My lifting technique improved massively, and my confidence in the gym skyrocketed."
-                        </p>
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border/40 shadow-xl relative">
+                    <div class="flex items-center gap-1 text-brand-blue text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center font-bold text-white text-sm">
-                            J.L.
+                    <p class="text-slate-300 text-xs leading-relaxed italic mb-6">"I dropped 8 kg of fat in 12 weeks without starving myself. Jericho's nutrition guidance is realistic and easy to keep up even with a busy work schedule."</p>
+                    <div class="flex items-center gap-3 border-t border-brand-border/30 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-accent text-brand-blue font-bold flex items-center justify-center border border-brand-blue/30 text-sm">
+                            MC
                         </div>
                         <div>
-                            <h4 class="font-bold text-white text-sm">Jason L.</h4>
-                            <p class="text-xs text-gray-400">1-on-1 Personal Training</p>
+                            <h4 class="font-bold text-white text-sm">Mark C.</h4>
+                            <p class="text-[10px] text-slate-400">Personal Training Client</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonial 3 -->
-                <div class="bg-brand-card p-6 rounded-2xl border border-white/10 relative flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-gray-300 text-sm italic mb-6">
-                            "The flexible nutrition plan Jericho gave me didn't feel like a restrict diet. It was easily sustainable alongside my busy family schedule!"
-                        </p>
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border/40 shadow-xl relative">
+                    <div class="flex items-center gap-1 text-brand-blue text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-600 flex items-center justify-center font-bold text-white text-sm">
-                            A.T.
+                    <p class="text-slate-300 text-xs leading-relaxed italic mb-6">"Jericho isn't just a trainer; he's a mentor. He checks in consistently and motivates you to build a fitness routine you actually enjoy sticking with."</p>
+                    <div class="flex items-center gap-3 border-t border-brand-border/30 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-accent text-brand-blue font-bold flex items-center justify-center border border-brand-blue/30 text-sm">
+                            JS
                         </div>
                         <div>
-                            <h4 class="font-bold text-white text-sm">Angela T.</h4>
-                            <p class="text-xs text-gray-400">Lifestyle Transformation</p>
+                            <h4 class="font-bold text-white text-sm">Jason S.</h4>
+                            <p class="text-[10px] text-slate-400">Nutrition & Lifestyle Client</p>
                         </div>
                     </div>
                 </div>
@@ -609,120 +701,171 @@
         </div>
     </section>
 
-    <!-- Contact / Booking Section -->
-    <section id="contact" class="py-20 bg-brand-card/30 border-t border-white/10 relative">
+    <section id="contact" class="py-20 bg-brand-card/40 border-t border-brand-border/30 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 
-                <!-- Contact Info Left -->
                 <div class="lg:col-span-5 space-y-6">
-                    <span class="text-brand-orange font-bold text-sm tracking-wider uppercase">Get Started Today</span>
-                    <h2 class="text-3xl sm:text-5xl font-black text-white">Book Your Free Consultation</h2>
-                    <p class="text-gray-300 leading-relaxed text-sm">
-                        Ready to make a change? Send a message describing your goals, and Coach Jericho will reach out to schedule your preliminary assessment.
+                    <span class="text-brand-blue font-bold text-sm tracking-wider uppercase">Get In Touch</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white">Start Your Transformation Today</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Ready to make a change? Fill out the intake form or reach out directly on Instagram and Facebook to discuss your customized coaching plan.
                     </p>
 
                     <div class="space-y-4 pt-4">
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-brand-card border border-white/10">
-                            <div class="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange text-xl">
+                        <a href="https://www.instagram.com/echofitstyle/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-card border border-brand-border/40 hover:border-pink-500/50 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500/20 via-rose-500/20 to-purple-600/20 text-pink-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform border border-pink-500/30">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-semibold text-slate-400">Instagram Handle</span>
+                                <span class="text-sm font-bold text-white group-hover:text-pink-400 transition-colors">@echofitstyle</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.facebook.com/profile.php?id=61580427441809" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-card border border-brand-border/40 hover:border-brand-blue/50 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-blue flex items-center justify-center text-xl group-hover:scale-110 transition-transform border border-brand-blue/20">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </div>
                             <div>
-                                <h4 class="text-xs text-gray-400 font-bold uppercase">Facebook Profile</h4>
-                                <a href="https://www.facebook.com/jericho.brin.924622" target="_blank" class="text-white hover:text-brand-orange font-semibold text-sm">
-                                    Jericho Brin
-                                </a>
+                                <span class="block text-xs font-semibold text-slate-400">Facebook Profile</span>
+                                <span class="text-sm font-bold text-white group-hover:text-brand-blue transition-colors">Jericho Brin</span>
                             </div>
-                        </div>
+                        </a>
 
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-brand-card border border-white/10">
-                            <div class="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange text-xl">
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-brand-card border border-brand-border/40">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl border border-indigo-500/20">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
-                                <h4 class="text-xs text-gray-400 font-bold uppercase">Coaching Hub</h4>
-                                <span class="text-white font-semibold text-sm">Online & In-Person Sessions</span>
+                                <span class="block text-xs font-semibold text-slate-400">Location</span>
+                                <span class="text-sm font-bold text-white">Personal & Online Worldwide</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Booking Form Right -->
-                <div class="lg:col-span-7">
-                    <div class="bg-brand-card rounded-2xl p-6 sm:p-8 border border-white/10 shadow-2xl">
-                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Full Name *</label>
-                                    <input type="text" id="form-name" required placeholder="John Doe" class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange transition-colors">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Email Address *</label>
-                                    <input type="email" id="form-email" required placeholder="john@example.com" class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange transition-colors">
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Selected Program</label>
-                                    <select id="form-program" class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange transition-colors">
-                                        <option value="1-on-1 Personal Training">1-on-1 Personal Training</option>
-                                        <option value="Online Fitness Coaching">Online Fitness Coaching</option>
-                                        <option value="Lifestyle & Nutrition">Lifestyle & Nutrition</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Fitness Goal</label>
-                                    <select id="form-goal" class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange transition-colors">
-                                        <option value="Fat Loss">Fat Loss & Toning</option>
-                                        <option value="Muscle Building">Muscle Building & Hypertrophy</option>
-                                        <option value="General Fitness">General Fitness & Endurance</option>
-                                    </select>
-                                </div>
-                            </div>
-
+                <div class="lg:col-span-7 bg-brand-card p-8 rounded-2xl border border-brand-border/40 shadow-2xl">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-gray-400 uppercase mb-2">Your Message / Fitness Goals</label>
-                                <textarea id="form-message" rows="4" placeholder="Tell Jericho about your current routine and goals..." class="w-full bg-brand-dark border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-brand-orange transition-colors"></textarea>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none">
                             </div>
-
-                            <button type="submit" class="w-full py-4 bg-gradient-to-r from-brand-orange to-red-600 hover:from-brand-neon hover:to-orange-600 text-white font-extrabold rounded-xl shadow-lg glow-effect transition-all text-base">
-                                Send Message & Book Slot
-                            </button>
-                        </form>
-
-                        <!-- Success Message Box -->
-                        <div id="form-success" class="hidden mt-4 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-center text-sm font-semibold">
-                            <i class="fa-solid fa-circle-check mr-2"></i> Thank you! Jericho will review your submission and contact you shortly.
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
+                                <input type="email" required placeholder="john@example.com" class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none">
+                            </div>
                         </div>
-                    </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Phone / WhatsApp Number</label>
+                                <input type="tel" placeholder="+123456789" class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Select Program</label>
+                                <select id="form-program" class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none">
+                                    <option value="Online Fitness Coaching">Online Fitness Coaching</option>
+                                    <option value="1-on-1 Personal Training">1-on-1 Personal Training</option>
+                                    <option value="Nutrition & Lifestyle Plan">Nutrition & Lifestyle Plan</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Tell Coach Jericho About Your Goals</label>
+                            <textarea rows="4" required placeholder="Describe your current fitness level, goals, or any questions..." class="w-full bg-brand-dark border border-brand-border/40 rounded-xl px-4 py-3 text-white text-sm focus:border-brand-blue focus:outline-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-brand-brightblue via-brand-blue to-sky-300 hover:from-brand-blue hover:to-cyan-300 text-slate-950 font-black rounded-xl transition-all shadow-xl text-base glow-effect">
+                            Submit Consultation Request
+                        </button>
+
+                        <div id="form-success" class="hidden p-4 rounded-xl bg-teal-500/20 border border-teal-500/30 text-teal-300 text-xs font-bold text-center">
+                            Thank you! Your message has been sent to Coach Jericho Brin. We will respond shortly!
+                        </div>
+                    </form>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-brand-dark border-t border-white/10 py-10">
+    <footer class="bg-brand-dark border-t border-brand-border/30 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <!-- Footer Logo -->
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-brand-orange rounded-lg flex items-center justify-center text-white font-black text-xs">
-                    JB
+                <img id="footer-logo" 
+                     src="images/logo.png" 
+                     alt="Jericho Brin Logo" 
+                     onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='flex';" 
+                     class="h-10 w-auto object-contain">
+                
+                <div id="footer-logo-fallback" class="hidden items-center gap-2">
+                    <div class="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center text-slate-950 font-black text-xs">
+                        JB
+                    </div>
+                    <span class="text-sm font-black text-white uppercase tracking-wider">JERICHO<span class="text-brand-blue">BRIN</span></span>
                 </div>
-                <span class="text-gray-400 text-sm">© 2026 Jericho Brin Fitness. All rights reserved.</span>
             </div>
 
-            <div class="flex items-center gap-6 text-gray-400 text-sm">
-                <a href="#about" class="hover:text-brand-orange transition-colors">About</a>
-                <a href="#programs" class="hover:text-brand-orange transition-colors">Programs</a>
-                <a href="#contact" class="hover:text-brand-orange transition-colors">Contact</a>
+            <p class="text-xs text-slate-400 text-center">
+                &copy; Jericho Brin Fitness Coaching. All rights reserved. Inspiring healthy lifestyles.
+            </p>
+
+            <div class="flex items-center gap-3">
+                <a href="https://www.instagram.com/echofitstyle/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-brand-card hover:bg-pink-500 text-brand-lightslate hover:text-white border border-brand-border/40 flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61580427441809" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-brand-card hover:bg-brand-blue text-brand-lightslate hover:text-slate-950 border border-brand-border/40 flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Application Logic -->
+    <div id="photo-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full bg-brand-card rounded-2xl overflow-hidden border border-brand-border/40 shadow-2xl">
+            <button onclick="closePhotoModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-brand-blue hover:text-slate-950 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-12">
+                <div class="md:col-span-8 bg-black flex items-center justify-center">
+                    <img id="modal-photo-img" src="" alt="Jericho Brin Photo" class="max-h-[70vh] w-auto object-contain">
+                </div>
+                <div class="md:col-span-4 p-6 flex flex-col justify-center bg-brand-card">
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-brand-blue mb-2">Instructor Photo</span>
+                    <h3 id="modal-photo-title" class="text-2xl font-bold text-white mb-4">--</h3>
+                    <p id="modal-photo-desc" class="text-sm text-slate-300 leading-relaxed">--</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="video-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="relative max-w-3xl w-full bg-brand-card rounded-2xl overflow-hidden border border-brand-border/40 shadow-2xl">
+            <button onclick="closeVideoModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-brand-blue hover:text-slate-950 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="p-6">
+                <div class="aspect-video bg-brand-navy rounded-xl overflow-hidden mb-6 relative flex items-center justify-center border border-brand-border/40">
+                    <div class="text-center p-8">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-brand-blue/20 border-2 border-brand-blue flex items-center justify-center text-brand-blue text-3xl mb-4 animate-pulse">
+                            <i class="fa-solid fa-circle-play"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Workout Video Showcase</h4>
+                        <p class="text-xs text-slate-400 max-w-md mx-auto">This player is configured for Jericho Brin's training routines.</p>
+                    </div>
+                </div>
+                <h3 id="modal-video-title" class="text-2xl font-extrabold text-white mb-2">--</h3>
+                <p id="modal-video-desc" class="text-sm text-slate-300">--</p>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Mobile Navigation Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -730,7 +873,40 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Tab Switching for Calculators
+        function openPhotoModal(imgSrc, title, desc) {
+            const modalImg = document.getElementById('modal-photo-img');
+            modalImg.src = imgSrc;
+            modalImg.onerror = function() {
+                this.onerror = null;
+                this.src = 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80';
+            };
+            document.getElementById('modal-photo-title').innerText = title;
+            document.getElementById('modal-photo-desc').innerText = desc;
+            const modal = document.getElementById('photo-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePhotoModal() {
+            const modal = document.getElementById('photo-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function openVideoModal(title, desc) {
+            document.getElementById('modal-video-title').innerText = title;
+            document.getElementById('modal-video-desc').innerText = desc;
+            const modal = document.getElementById('video-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
         function switchTab(tab) {
             const bmiCalc = document.getElementById('bmi-calculator');
             const macroCalc = document.getElementById('macro-calculator');
@@ -740,17 +916,16 @@
             if (tab === 'bmi') {
                 bmiCalc.classList.remove('hidden');
                 macroCalc.classList.add('hidden');
-                bmiBtn.className = "px-6 py-2.5 rounded-lg font-bold text-sm bg-brand-orange text-white shadow transition-all";
-                macroBtn.className = "px-6 py-2.5 rounded-lg font-bold text-sm text-gray-400 hover:text-white transition-all";
+                bmiBtn.className = "px-6 py-2.5 rounded-lg font-bold text-sm bg-brand-blue text-slate-950 shadow transition-all";
+                macroBtn.className = "px-6 py-2.5 rounded-lg font-bold text-sm text-slate-400 hover:text-white transition-all";
             } else {
                 macroCalc.classList.remove('hidden');
                 bmiCalc.classList.add('hidden');
-                macroBtn.className = "px-6 py-2.5 rounded-lg font-bold text-sm bg-brand-orange text-white shadow transition-all";
-                bmiBtn.className = "px-6 py-2.5 rounded-lg font-bold text-sm text-gray-400 hover:text-white transition-all";
+                macroBtn.className = "px-6 py-2.5 rounded-lg font-bold text-sm bg-brand-blue text-slate-950 shadow transition-all";
+                bmiBtn.className = "px-6 py-2.5 rounded-lg font-bold text-sm text-slate-400 hover:text-white transition-all";
             }
         }
 
-        // Calculate BMI
         function calculateBMI() {
             const weight = parseFloat(document.getElementById('bmi-weight').value);
             const height = parseFloat(document.getElementById('bmi-height').value) / 100;
@@ -769,10 +944,10 @@
                     bmiCatElem.className = "inline-block px-3 py-1 rounded-full text-xs font-bold uppercase text-amber-300 bg-amber-500/20 border border-amber-500/30";
                 } else if (bmi >= 18.5 && bmi <= 24.9) {
                     bmiCatElem.innerText = "Normal Weight";
-                    bmiCatElem.className = "inline-block px-3 py-1 rounded-full text-xs font-bold uppercase text-green-400 bg-green-500/20 border border-green-500/30";
+                    bmiCatElem.className = "inline-block px-3 py-1 rounded-full text-xs font-bold uppercase text-teal-300 bg-teal-500/20 border border-teal-500/30";
                 } else if (bmi >= 25 && bmi <= 29.9) {
                     bmiCatElem.innerText = "Overweight";
-                    bmiCatElem.className = "inline-block px-3 py-1 rounded-full text-xs font-bold uppercase text-orange-400 bg-orange-500/20 border border-orange-500/30";
+                    bmiCatElem.className = "inline-block px-3 py-1 rounded-full text-xs font-bold uppercase text-sky-300 bg-sky-500/20 border border-sky-500/30";
                 } else {
                     bmiCatElem.innerText = "Obese";
                     bmiCatElem.className = "inline-block px-3 py-1 rounded-full text-xs font-bold uppercase text-red-400 bg-red-500/20 border border-red-500/30";
@@ -780,7 +955,6 @@
             }
         }
 
-        // Calculate Daily Calories & Macros
         function calculateMacros() {
             const gender = document.getElementById('macro-gender').value;
             const age = parseFloat(document.getElementById('macro-age').value);
@@ -789,18 +963,16 @@
             const goal = document.getElementById('macro-goal').value;
 
             if (weight > 0 && height > 0 && age > 0) {
-                // Mifflin-St Jeor Formula BMR
                 let bmr = (10 * weight) + (6.25 * height) - (5 * age);
                 bmr += (gender === 'male') ? 5 : -161;
 
-                let tdee = bmr * 1.45; // Moderate activity factor
+                let tdee = bmr * 1.45;
 
                 if (goal === 'lose') tdee -= 400;
                 if (goal === 'gain') tdee += 350;
 
                 const calories = Math.round(tdee);
                 
-                // Macro Breakdown (Approx: Protein 30%, Carbs 40%, Fats 30%)
                 const proteinGrams = Math.round((calories * 0.30) / 4);
                 const carbGrams = Math.round((calories * 0.40) / 4);
                 const fatGrams = Math.round((calories * 0.30) / 9);
@@ -814,7 +986,6 @@
             }
         }
 
-        // Selecting a Program pre-fills Form
         function selectProgram(programName) {
             const selectElem = document.getElementById('form-program');
             if (selectElem) {
@@ -822,7 +993,6 @@
             }
         }
 
-        // Form Submit Handler
         function handleFormSubmit(event) {
             event.preventDefault();
             const successMsg = document.getElementById('form-success');
